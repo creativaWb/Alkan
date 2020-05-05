@@ -39,7 +39,7 @@ public class neuerPfand extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jButton8 = new javax.swing.JButton();
+        btn_senden = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(242, 242, 242));
@@ -112,14 +112,14 @@ public class neuerPfand extends javax.swing.JFrame {
 
         jLabel4.setText("Preis");
 
-        jButton8.setBackground(new java.awt.Color(170, 170, 170));
-        jButton8.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        jButton8.setForeground(new java.awt.Color(255, 255, 255));
-        jButton8.setText("Senden");
-        jButton8.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        jButton8.setBounds(new java.awt.Rectangle(142, 142, 142, 41));
-        jButton8.setMaximumSize(new java.awt.Dimension(142, 41));
-        jButton8.setOpaque(true);
+        btn_senden.setBackground(new java.awt.Color(170, 170, 170));
+        btn_senden.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btn_senden.setForeground(new java.awt.Color(255, 255, 255));
+        btn_senden.setText("Senden");
+        btn_senden.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        btn_senden.setBounds(new java.awt.Rectangle(142, 142, 142, 41));
+        btn_senden.setMaximumSize(new java.awt.Dimension(142, 41));
+        btn_senden.setOpaque(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -147,7 +147,7 @@ public class neuerPfand extends javax.swing.JFrame {
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 730, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_senden, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel4)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -177,7 +177,7 @@ public class neuerPfand extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btn_senden, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(433, Short.MAX_VALUE))
         );
 
@@ -239,13 +239,13 @@ public class neuerPfand extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_senden;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
