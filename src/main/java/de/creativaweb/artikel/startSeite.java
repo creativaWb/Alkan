@@ -5,6 +5,8 @@
  */
 package de.creativaweb.artikel;
 
+import kunde.kunde;
+
 /**
  *
  * @author Nail
@@ -61,6 +63,11 @@ public class startSeite extends javax.swing.JFrame {
         btn_kunde.setFocusable(false);
         btn_kunde.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_kunde.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_kunde.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_kundeMouseClicked(evt);
+            }
+        });
 
         btn_lieferant.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btn_lieferant.setText("Lieferant");
@@ -166,6 +173,10 @@ public class startSeite extends javax.swing.JFrame {
         artikelFrame.setVisible(true);
     }//GEN-LAST:event_btn_artikelMouseClicked
 
+    private void btn_kundeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_kundeMouseClicked
+        kundeFrame.setVisible(true);
+    }//GEN-LAST:event_btn_kundeMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -213,5 +224,5 @@ public class startSeite extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
     private final artikel artikelFrame = new artikel();
-    //TODO nächste Layout fertigen
+    private final kunde kundeFrame = new kunde();
 }

@@ -239,11 +239,11 @@ public class kunde extends javax.swing.JFrame {
 
     private void btn_offeneKontenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_offeneKontenMouseClicked
         // TODO add your handling code here:
-        neuerPfandFrame.setVisible(true);
+        offeneKontenFrame.setVisible(true);
     }//GEN-LAST:event_btn_offeneKontenMouseClicked
 
     private void btn_neuerKundeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_neuerKundeMouseClicked
-        neuerArtikelFrame.setVisible(true);
+        neuerKundeFrame.setVisible(true);
     }//GEN-LAST:event_btn_neuerKundeMouseClicked
 
     /**
@@ -300,8 +300,7 @@ public class kunde extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-    private final neuerArtikel neuerArtikelFrame = new neuerArtikel();
-    private final neuerPfand neuerPfandFrame = new neuerPfand();
-    private final angebot angebotFrame = new angebot();
-    private final gruppe gruppeFrame = new gruppe();
+    private final neuerKunde neuerKundeFrame = new neuerKunde();
+    private final offeneKonten offeneKontenFrame = new offeneKonten();
+
 }
