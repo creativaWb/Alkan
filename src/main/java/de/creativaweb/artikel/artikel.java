@@ -8,6 +8,7 @@ package de.creativaweb.artikel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import kunde.kunde;
 /**
  *
  * @author Nail
@@ -30,7 +31,7 @@ public class artikel extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btn_kunde = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
@@ -57,14 +58,19 @@ public class artikel extends javax.swing.JFrame {
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jButton2.setText("Kunde");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_kunde.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        btn_kunde.setText("Kunde");
+        btn_kunde.setBorder(null);
+        btn_kunde.setBorderPainted(false);
+        btn_kunde.setContentAreaFilled(false);
+        btn_kunde.setFocusable(false);
+        btn_kunde.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_kunde.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_kunde.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_kundeMouseClicked(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jButton3.setText("Lieferant");
@@ -201,7 +207,7 @@ public class artikel extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButton1)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton2)
+                        .addComponent(btn_kunde)
                         .addGap(33, 33, 33)
                         .addComponent(jButton4)
                         .addGap(33, 33, 33)
@@ -233,7 +239,7 @@ public class artikel extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_kunde, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -280,6 +286,10 @@ public class artikel extends javax.swing.JFrame {
         neuerArtikelFrame.setVisible(true);
     }//GEN-LAST:event_btn_neuerArtikelMouseClicked
 
+    private void btn_kundeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_kundeMouseClicked
+        kundeFrame.setVisible(true);
+    }//GEN-LAST:event_btn_kundeMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -318,11 +328,11 @@ public class artikel extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_angebot;
+    private javax.swing.JButton btn_kunde;
     private javax.swing.JButton btn_neueGruppe;
     private javax.swing.JButton btn_neuerArtikel;
     private javax.swing.JButton btn_neuerPfand;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -337,4 +347,5 @@ public class artikel extends javax.swing.JFrame {
     private final neuerPfand neuerPfandFrame = new neuerPfand();
     private final angebot angebotFrame = new angebot();
     private final gruppe gruppeFrame = new gruppe();
+    private final kunde kundeFrame = new kunde();
 }

@@ -30,12 +30,12 @@ public class offeneKonten extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        btn_artikel = new javax.swing.JButton();
+        btn_kunde = new javax.swing.JButton();
+        btn_lieferant = new javax.swing.JButton();
+        btn_mitarbeiter = new javax.swing.JButton();
+        btn_bestellungen = new javax.swing.JButton();
+        btn_kundenAuftrag = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         table_offeneKonten = new javax.swing.JTable();
@@ -44,64 +44,64 @@ public class offeneKonten extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(242, 242, 242));
 
-        jButton1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jButton1.setText("Artikel");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.setFocusable(false);
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_artikel.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        btn_artikel.setText("Artikel");
+        btn_artikel.setBorder(null);
+        btn_artikel.setBorderPainted(false);
+        btn_artikel.setContentAreaFilled(false);
+        btn_artikel.setFocusable(false);
+        btn_artikel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_artikel.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton2.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jButton2.setText("Kunde");
-        jButton2.setBorder(null);
-        jButton2.setBorderPainted(false);
-        jButton2.setContentAreaFilled(false);
-        jButton2.setFocusable(false);
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_kunde.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        btn_kunde.setText("Kunde");
+        btn_kunde.setBorder(null);
+        btn_kunde.setBorderPainted(false);
+        btn_kunde.setContentAreaFilled(false);
+        btn_kunde.setFocusable(false);
+        btn_kunde.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_kunde.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton3.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jButton3.setText("Lieferant");
-        jButton3.setBorder(null);
-        jButton3.setBorderPainted(false);
-        jButton3.setContentAreaFilled(false);
-        jButton3.setFocusable(false);
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btn_lieferant.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        btn_lieferant.setText("Lieferant");
+        btn_lieferant.setBorder(null);
+        btn_lieferant.setBorderPainted(false);
+        btn_lieferant.setContentAreaFilled(false);
+        btn_lieferant.setFocusable(false);
+        btn_lieferant.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_lieferant.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_lieferant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btn_lieferantActionPerformed(evt);
             }
         });
 
-        jButton4.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jButton4.setText("Mitarbeiter");
-        jButton4.setBorder(null);
-        jButton4.setBorderPainted(false);
-        jButton4.setContentAreaFilled(false);
-        jButton4.setFocusable(false);
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_mitarbeiter.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        btn_mitarbeiter.setText("Mitarbeiter");
+        btn_mitarbeiter.setBorder(null);
+        btn_mitarbeiter.setBorderPainted(false);
+        btn_mitarbeiter.setContentAreaFilled(false);
+        btn_mitarbeiter.setFocusable(false);
+        btn_mitarbeiter.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_mitarbeiter.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton5.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jButton5.setText("Bestellungen");
-        jButton5.setBorder(null);
-        jButton5.setBorderPainted(false);
-        jButton5.setContentAreaFilled(false);
-        jButton5.setFocusable(false);
-        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_bestellungen.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        btn_bestellungen.setText("Bestellungen");
+        btn_bestellungen.setBorder(null);
+        btn_bestellungen.setBorderPainted(false);
+        btn_bestellungen.setContentAreaFilled(false);
+        btn_bestellungen.setFocusable(false);
+        btn_bestellungen.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_bestellungen.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
-        jButton7.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
-        jButton7.setText("Kunden Auftrag");
-        jButton7.setBorder(null);
-        jButton7.setBorderPainted(false);
-        jButton7.setContentAreaFilled(false);
-        jButton7.setFocusable(false);
-        jButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_kundenAuftrag.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
+        btn_kundenAuftrag.setText("Kunden Auftrag");
+        btn_kundenAuftrag.setBorder(null);
+        btn_kundenAuftrag.setBorderPainted(false);
+        btn_kundenAuftrag.setContentAreaFilled(false);
+        btn_kundenAuftrag.setFocusable(false);
+        btn_kundenAuftrag.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_kundenAuftrag.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -144,17 +144,17 @@ public class offeneKonten extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1)
+                        .addComponent(btn_artikel)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton2)
+                        .addComponent(btn_kunde)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton4)
+                        .addComponent(btn_mitarbeiter)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton3)
+                        .addComponent(btn_lieferant)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton5)
+                        .addComponent(btn_bestellungen)
                         .addGap(33, 33, 33)
-                        .addComponent(jButton7))
+                        .addComponent(btn_kundenAuftrag))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,12 +166,12 @@ public class offeneKonten extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_artikel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_kunde, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_bestellungen, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_mitarbeiter, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_kundenAuftrag, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_lieferant, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
@@ -184,9 +184,9 @@ public class offeneKonten extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btn_lieferantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_lieferantActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btn_lieferantActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,12 +231,12 @@ public class offeneKonten extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton btn_artikel;
+    private javax.swing.JButton btn_bestellungen;
+    private javax.swing.JButton btn_kunde;
+    private javax.swing.JButton btn_kundenAuftrag;
+    private javax.swing.JButton btn_lieferant;
+    private javax.swing.JButton btn_mitarbeiter;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
