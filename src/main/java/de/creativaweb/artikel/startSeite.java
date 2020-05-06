@@ -6,6 +6,8 @@
 package de.creativaweb.artikel;
 
 import kunde.kunde;
+import lieferant.lieferant;
+import mitarbeiter.mitarbeiter;
 
 /**
  *
@@ -77,6 +79,11 @@ public class startSeite extends javax.swing.JFrame {
         btn_lieferant.setFocusable(false);
         btn_lieferant.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_lieferant.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_lieferant.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_lieferantMouseClicked(evt);
+            }
+        });
 
         btn_mitarbeiter.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btn_mitarbeiter.setText("Mitarbeiter");
@@ -86,6 +93,11 @@ public class startSeite extends javax.swing.JFrame {
         btn_mitarbeiter.setFocusable(false);
         btn_mitarbeiter.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_mitarbeiter.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_mitarbeiter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_mitarbeiterMouseClicked(evt);
+            }
+        });
 
         btn_bestellungen.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btn_bestellungen.setText("Bestellungen");
@@ -177,6 +189,14 @@ public class startSeite extends javax.swing.JFrame {
         kundeFrame.setVisible(true);
     }//GEN-LAST:event_btn_kundeMouseClicked
 
+    private void btn_mitarbeiterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_mitarbeiterMouseClicked
+        mitarbeiterFrame.setVisible(true);
+    }//GEN-LAST:event_btn_mitarbeiterMouseClicked
+
+    private void btn_lieferantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_lieferantMouseClicked
+        lieferantFrame.setVisible(true);
+    }//GEN-LAST:event_btn_lieferantMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -225,4 +245,6 @@ public class startSeite extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private final artikel artikelFrame = new artikel();
     private final kunde kundeFrame = new kunde();
+    private final mitarbeiter mitarbeiterFrame = new mitarbeiter();
+    private final lieferant lieferantFrame = new lieferant();
 }

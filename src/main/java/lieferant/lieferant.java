@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package mitarbeiter;
+package lieferant;
 
 import kunde.*;
 import de.creativaweb.artikel.*;
@@ -14,11 +14,11 @@ import javax.swing.JFrame;
  *
  * @author Nail
  */
-public class mitarbeiter extends javax.swing.JFrame {
+public class lieferant extends javax.swing.JFrame {
     /**
      * Creates new form startSeite
      */
-    public mitarbeiter() {
+    public lieferant() {
         initComponents();
     }
 
@@ -38,15 +38,13 @@ public class mitarbeiter extends javax.swing.JFrame {
         btn_bestellungen = new javax.swing.JButton();
         btn_kundenAuftrag = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        btn_neuerMitarbeiter = new javax.swing.JButton();
-        btn_neueRolle = new javax.swing.JButton();
+        btn_neuerLieferant = new javax.swing.JButton();
+        btn_artikelLieferant = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        field_kundenSuchen = new javax.swing.JTextField();
+        field_lieferantSuchen = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        table_mitarbeiter = new javax.swing.JTable();
+        table_lieferant = new javax.swing.JTable();
         btn_suchen = new javax.swing.JButton();
-        btn_packer = new javax.swing.JButton();
-        btn_fahrer = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(242, 242, 242));
@@ -59,11 +57,6 @@ public class mitarbeiter extends javax.swing.JFrame {
         btn_artikel.setFocusable(false);
         btn_artikel.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_artikel.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_artikel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_artikelMouseClicked(evt);
-            }
-        });
 
         btn_kunde.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btn_kunde.setText("Kunde");
@@ -73,11 +66,6 @@ public class mitarbeiter extends javax.swing.JFrame {
         btn_kunde.setFocusable(false);
         btn_kunde.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_kunde.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_kunde.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_kundeMouseClicked(evt);
-            }
-        });
 
         btn_lieferant.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btn_lieferant.setText("Lieferant");
@@ -122,37 +110,37 @@ public class mitarbeiter extends javax.swing.JFrame {
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
 
-        btn_neuerMitarbeiter.setBackground(new java.awt.Color(170, 170, 170));
-        btn_neuerMitarbeiter.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btn_neuerMitarbeiter.setForeground(new java.awt.Color(255, 255, 255));
-        btn_neuerMitarbeiter.setText("Neuer Mitarbeiter");
-        btn_neuerMitarbeiter.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        btn_neuerMitarbeiter.setMaximumSize(new java.awt.Dimension(142, 41));
-        btn_neuerMitarbeiter.setOpaque(true);
-        btn_neuerMitarbeiter.setSize(new java.awt.Dimension(142, 41));
-        btn_neuerMitarbeiter.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_neuerLieferant.setBackground(new java.awt.Color(170, 170, 170));
+        btn_neuerLieferant.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btn_neuerLieferant.setForeground(new java.awt.Color(255, 255, 255));
+        btn_neuerLieferant.setText("Neuer Lieferant");
+        btn_neuerLieferant.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        btn_neuerLieferant.setMaximumSize(new java.awt.Dimension(142, 41));
+        btn_neuerLieferant.setOpaque(true);
+        btn_neuerLieferant.setSize(new java.awt.Dimension(142, 41));
+        btn_neuerLieferant.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_neuerMitarbeiterMouseClicked(evt);
+                btn_neuerLieferantMouseClicked(evt);
             }
         });
 
-        btn_neueRolle.setBackground(new java.awt.Color(170, 170, 170));
-        btn_neueRolle.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btn_neueRolle.setForeground(new java.awt.Color(255, 255, 255));
-        btn_neueRolle.setText("Neue Rolle");
-        btn_neueRolle.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        btn_neueRolle.setOpaque(true);
-        btn_neueRolle.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_artikelLieferant.setBackground(new java.awt.Color(170, 170, 170));
+        btn_artikelLieferant.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btn_artikelLieferant.setForeground(new java.awt.Color(255, 255, 255));
+        btn_artikelLieferant.setText("Artikel Lieferant");
+        btn_artikelLieferant.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        btn_artikelLieferant.setOpaque(true);
+        btn_artikelLieferant.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_neueRolleMouseClicked(evt);
+                btn_artikelLieferantMouseClicked(evt);
             }
         });
 
-        jLabel1.setText("Mitarbeiter suchen");
+        jLabel1.setText("Lieferant suchen");
 
-        field_kundenSuchen.setSize(new java.awt.Dimension(300, 25));
+        field_lieferantSuchen.setSize(new java.awt.Dimension(300, 25));
 
-        table_mitarbeiter.setModel(new javax.swing.table.DefaultTableModel(
+        table_lieferant.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -171,39 +159,15 @@ public class mitarbeiter extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "MitarbeiterNr", "Vorname", "Nachname", "Strasse", "PLZ", "Ort", "Rolle", ""
+                "LieferantenNr", "Name", "Adresse", "PLZ", "Ort", "Telefon", "Handy", ""
             }
         ));
-        table_mitarbeiter.setRowHeight(31);
-        table_mitarbeiter.setShowGrid(false);
-        table_mitarbeiter.setShowVerticalLines(true);
-        jScrollPane1.setViewportView(table_mitarbeiter);
+        table_lieferant.setRowHeight(31);
+        table_lieferant.setShowGrid(false);
+        table_lieferant.setShowVerticalLines(true);
+        jScrollPane1.setViewportView(table_lieferant);
 
         btn_suchen.setText("suchen");
-
-        btn_packer.setBackground(new java.awt.Color(170, 170, 170));
-        btn_packer.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btn_packer.setForeground(new java.awt.Color(255, 255, 255));
-        btn_packer.setText("Packer");
-        btn_packer.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        btn_packer.setOpaque(true);
-        btn_packer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_packerMouseClicked(evt);
-            }
-        });
-
-        btn_fahrer.setBackground(new java.awt.Color(170, 170, 170));
-        btn_fahrer.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
-        btn_fahrer.setForeground(new java.awt.Color(255, 255, 255));
-        btn_fahrer.setText("Fahrer");
-        btn_fahrer.setBorder(javax.swing.BorderFactory.createCompoundBorder());
-        btn_fahrer.setOpaque(true);
-        btn_fahrer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_fahrerMouseClicked(evt);
-            }
-        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -232,17 +196,13 @@ public class mitarbeiter extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(18, 18, 18)
-                                .addComponent(field_kundenSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(field_lieferantSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(btn_suchen))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(btn_neuerMitarbeiter, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btn_neuerLieferant, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btn_neueRolle, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_fahrer, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(btn_packer, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btn_artikelLieferant, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -257,21 +217,18 @@ public class mitarbeiter extends javax.swing.JFrame {
                     .addComponent(btn_lieferant, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn_neuerMitarbeiter, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_neueRolle, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_fahrer, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btn_packer, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btn_neuerLieferant, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_artikelLieferant, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(field_kundenSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(field_lieferantSuchen, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(btn_suchen))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 513, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         pack();
@@ -281,29 +238,14 @@ public class mitarbeiter extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_lieferantActionPerformed
 
-    private void btn_neueRolleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_neueRolleMouseClicked
-        neueRolleFrame.setVisible(true);
-    }//GEN-LAST:event_btn_neueRolleMouseClicked
+    private void btn_artikelLieferantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_artikelLieferantMouseClicked
+        // TODO add your handling code here:
+        artikelLieferantFrame.setVisible(true);
+    }//GEN-LAST:event_btn_artikelLieferantMouseClicked
 
-    private void btn_neuerMitarbeiterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_neuerMitarbeiterMouseClicked
-        neuerMitarbeiterFrame.setVisible(true);
-    }//GEN-LAST:event_btn_neuerMitarbeiterMouseClicked
-
-    private void btn_packerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_packerMouseClicked
-        packerFrame.setVisible(true);
-    }//GEN-LAST:event_btn_packerMouseClicked
-
-    private void btn_fahrerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_fahrerMouseClicked
-        fahrerFrame.setVisible(true);
-    }//GEN-LAST:event_btn_fahrerMouseClicked
-
-    private void btn_artikelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_artikelMouseClicked
-       artikelFrame.setVisible(true);
-    }//GEN-LAST:event_btn_artikelMouseClicked
-
-    private void btn_kundeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_kundeMouseClicked
-       kundeFrame.setVisible(true);
-    }//GEN-LAST:event_btn_kundeMouseClicked
+    private void btn_neuerLieferantMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_neuerLieferantMouseClicked
+        neuerLieferantFrame.setVisible(true);
+    }//GEN-LAST:event_btn_neuerLieferantMouseClicked
 
     /**
      * @param args the command line arguments
@@ -322,22 +264,14 @@ public class mitarbeiter extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(mitarbeiter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(lieferant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(mitarbeiter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(lieferant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(mitarbeiter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(lieferant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(mitarbeiter.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(lieferant.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -350,35 +284,28 @@ public class mitarbeiter extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new mitarbeiter().setVisible(true);
+                new lieferant().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_artikel;
+    private javax.swing.JButton btn_artikelLieferant;
     private javax.swing.JButton btn_bestellungen;
-    private javax.swing.JButton btn_fahrer;
     private javax.swing.JButton btn_kunde;
     private javax.swing.JButton btn_kundenAuftrag;
     private javax.swing.JButton btn_lieferant;
     private javax.swing.JButton btn_mitarbeiter;
-    private javax.swing.JButton btn_neueRolle;
-    private javax.swing.JButton btn_neuerMitarbeiter;
-    private javax.swing.JButton btn_packer;
+    private javax.swing.JButton btn_neuerLieferant;
     private javax.swing.JButton btn_suchen;
-    private javax.swing.JTextField field_kundenSuchen;
+    private javax.swing.JTextField field_lieferantSuchen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable table_mitarbeiter;
+    private javax.swing.JTable table_lieferant;
     // End of variables declaration//GEN-END:variables
-    private final artikel artikelFrame = new artikel();
-    private final kunde kundeFrame = new kunde();
-    private final neuerMitarbeiter neuerMitarbeiterFrame = new neuerMitarbeiter();
-    private final neueRolle neueRolleFrame = new neueRolle();
-    private final fahrer fahrerFrame = new fahrer();
-    private final packer packerFrame = new packer();
-    
+    private final neuerLieferant neuerLieferantFrame = new neuerLieferant();
+    private final artikelLieferant artikelLieferantFrame = new artikelLieferant();
 
 }
