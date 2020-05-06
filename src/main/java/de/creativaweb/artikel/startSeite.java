@@ -7,6 +7,7 @@ package de.creativaweb.artikel;
 
 import bestellung.bestellung;
 import kunde.kunde;
+import kundenAuftrag.kundenAuftrag;
 import lieferant.lieferant;
 import mitarbeiter.mitarbeiter;
 
@@ -131,6 +132,11 @@ public class startSeite extends javax.swing.JFrame {
         btn_kundenAuftrag.setFocusable(false);
         btn_kundenAuftrag.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_kundenAuftrag.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_kundenAuftrag.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_kundenAuftragMouseClicked(evt);
+            }
+        });
 
         btn_warenausgang.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         btn_warenausgang.setText("Warenausgang");
@@ -207,6 +213,10 @@ public class startSeite extends javax.swing.JFrame {
         bestellungFrame.setVisible(true);
     }//GEN-LAST:event_btn_bestellungenMouseClicked
 
+    private void btn_kundenAuftragMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_kundenAuftragMouseClicked
+        kundenAuftragFrame.setVisible(true);
+    }//GEN-LAST:event_btn_kundenAuftragMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -258,4 +268,5 @@ public class startSeite extends javax.swing.JFrame {
     private final mitarbeiter mitarbeiterFrame = new mitarbeiter();
     private final lieferant lieferantFrame = new lieferant();
     private final bestellung bestellungFrame = new bestellung();
+    private final kundenAuftrag kundenAuftragFrame = new kundenAuftrag();
 }
