@@ -10,7 +10,7 @@ import kunde.kunde;
 import kundenAuftrag.kundenAuftrag;
 import lieferant.lieferant;
 import mitarbeiter.mitarbeiter;
-
+import javax.swing.JButton;
 /**
  *
  * @author Nail
@@ -33,14 +33,14 @@ public class startSeite extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_artikel = new javax.swing.JButton();
-        btn_kunde = new javax.swing.JButton();
-        btn_lieferant = new javax.swing.JButton();
-        btn_mitarbeiter = new javax.swing.JButton();
-        btn_bestellungen = new javax.swing.JButton();
-        btn_wareneingang = new javax.swing.JButton();
-        btn_kundenAuftrag = new javax.swing.JButton();
-        btn_warenausgang = new javax.swing.JButton();
+        btn_artikel = new JButton();
+        btn_kunde = new JButton();
+        btn_lieferant = new JButton();
+        btn_mitarbeiter = new JButton();
+        btn_bestellungen = new JButton();
+        btn_wareneingang = new JButton();
+        btn_kundenAuftrag = new JButton();
+        btn_warenausgang = new JButton();
         jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
