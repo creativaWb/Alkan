@@ -6,6 +6,8 @@
 package kunde;
 
 import de.creativaweb.artikel.*;
+import de.creativaweb.database.OwnDerby;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
@@ -282,6 +284,7 @@ public class kunde extends javax.swing.JFrame {
                 new kunde().setVisible(true);
             }
         });
+        OwnDerby.openCon();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

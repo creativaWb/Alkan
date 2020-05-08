@@ -36,7 +36,8 @@ public class OwnDerby implements Runnable{
 	//private Basics				basics			= new Basics();
 	private Thread				trd				= null;
 	
-	private static Connection			con				= null; private Statement			stmtT		= null;
+	private static Connection			con				= null;
+	private Statement			stmtT		= null;
     private Statement			stmt			= null;
     private ResultSet			rset			= null;
 	private DatabaseMetaData	metadata		= null;
@@ -59,11 +60,13 @@ public class OwnDerby implements Runnable{
 		// 4
 		"jdbc:derby://192.168.2.108:1527/alkan;create=true;",
 		// 5
-		"jdbc:derby://v3.cw-bo.de:24042/alkan;create=true;"
+		"jdbc:derby://v3.cw-bo.de:24042/alkan;create=true;",
+		// 6 Test Tabellen aus APP
+		"jdbc:derby://v3.cw-bo.de:24042/alkan"
 	};	
 	/*
 	private int					setServer		= 2;/*/
-	private static int					setServer		= 5;//*/
+	private static int					setServer		= 6;//*/
 	public String 				lieferantname;
 	private DefaultTableModel	tblModel	= null;
 	private String[]			tblHeader2	= { "","" };
@@ -90,8 +93,12 @@ public class OwnDerby implements Runnable{
 		try {
 			Class.forName( "org.apache.derby.jdbc.ClientDriver" );
 			Properties props = new Properties();
-            props.put("user", "alkan");
-            props.put("password", "getin");
+//           fur Server Nr.5
+//            props.put("user", "alkan");
+//            props.put("password", "getin");
+			//           fur Server Nr.6 APP
+            props.put("user", "egal");
+            props.put("password", "egal");
 			//con = DriverManager.getConnection(server,props);
 			con = DriverManager.getConnection(server);
 			dbStarted	= true;
@@ -251,7 +258,7 @@ public class OwnDerby implements Runnable{
 	}
 	
 	/**
-	 * Zeile einer Tabelle auslesen und zurückgeben
+	 * Zeile einer Tabelle auslesen und zurï¿½ckgeben
 	 * @param tbl	= Name der Tabelle
 	 * @param str	= Suchkriterium
 	 * @return		= Datensatz
@@ -678,7 +685,7 @@ public class OwnDerby implements Runnable{
 		closeCon();
 	}
 	
-	/** Eine Kundennummer erzeugen und zurückgeben
+	/** Eine Kundennummer erzeugen und zurï¿½ckgeben
 	 * 20200204jf
 	 * @return	= neue Kundennummer
 	 */
