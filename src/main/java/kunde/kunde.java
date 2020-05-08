@@ -7,10 +7,18 @@ package kunde;
 
 import de.creativaweb.artikel.*;
 import de.creativaweb.database.OwnDerby;
+import DbTest.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.swing.JFrame;
+import javax.swing.JTable;
+import javax.swing.JButton;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Nail
@@ -32,20 +40,20 @@ public class kunde extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_artikel = new javax.swing.JButton();
-        btn_kunde = new javax.swing.JButton();
-        btn_lieferant = new javax.swing.JButton();
-        btn_mitarbeiter = new javax.swing.JButton();
-        btn_bestellungen = new javax.swing.JButton();
-        btn_kundenAuftrag = new javax.swing.JButton();
+        btn_artikel = new JButton();
+        btn_kunde = new JButton();
+        btn_lieferant = new JButton();
+        btn_mitarbeiter = new JButton();
+        btn_bestellungen = new JButton();
+        btn_kundenAuftrag = new JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        btn_neuerKunde = new javax.swing.JButton();
-        btn_offeneKonten = new javax.swing.JButton();
+        btn_neuerKunde = new JButton();
+        btn_offeneKonten = new JButton();
         jLabel1 = new javax.swing.JLabel();
         field_kundenSuchen = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        btn_suchen = new javax.swing.JButton();
+        table_kunde = new JTable();
+        btn_suchen = new JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(242, 242, 242));
@@ -141,34 +149,24 @@ public class kunde extends javax.swing.JFrame {
 
         field_kundenSuchen.setSize(new java.awt.Dimension(300, 25));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
-            },
+        table_kunde.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {  },
             new String [] {
                 "KundenNr", "Firmen Namen", "Vorname", "Nachname", "Strasse", "PLZ", "Ort", "Land", ""
             }
         ));
-        jTable1.setRowHeight(31);
-        jTable1.setShowGrid(false);
-        jTable1.setShowVerticalLines(true);
-        jScrollPane1.setViewportView(jTable1);
+        table_kunde.setRowHeight(31);
+        table_kunde.setShowGrid(false);
+        table_kunde.setShowVerticalLines(true);
+        jScrollPane1.setViewportView(table_kunde);
+
 
         btn_suchen.setText("suchen");
+        btn_suchen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_suchenKundeMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -246,7 +244,33 @@ public class kunde extends javax.swing.JFrame {
 
     private void btn_neuerKundeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_neuerKundeMouseClicked
         neuerKundeFrame.setVisible(true);
-    }//GEN-LAST:event_btn_neuerKundeMouseClicked
+    }
+
+    private void btn_suchenKundeMouseClicked(java.awt.event.MouseEvent evt) {
+
+        DefaultTableModel model = (DefaultTableModel) table_kunde.getModel();
+        dbConnection dbConnection = new dbConnection();
+        dbConnection.init();
+
+        String str = field_kundenSuchen.getText();
+        String query = "SELECT KUNDENNR, NAME, ADR from APP.KUNDEN WHERE NAME LIKE '"+ "%" +str+ "%" +"' " +
+                                                                 "OR KUNDENNR LIKE '"+ "%" +str+ "%" +"' " ;
+
+        try {
+
+            statement = dbConnection.getMyConnection().createStatement();
+            resultSet = statement.executeQuery(query);
+            while ( resultSet.next()) {
+                model.addRow(new Object[] {resultSet.getString(1),resultSet.getString(2),resultSet.getString(3), });
+
+            }
+        } catch(Exception e) { System.out.println("Fehler #1 in getArtikel(): " + e.getMessage()); e.printStackTrace(); };
+
+        dbConnection.destroy();
+
+    }
+
+
 
     /**
      * @param args the command line arguments
@@ -284,26 +308,32 @@ public class kunde extends javax.swing.JFrame {
                 new kunde().setVisible(true);
             }
         });
-        OwnDerby.openCon();
+
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_artikel;
-    private javax.swing.JButton btn_bestellungen;
-    private javax.swing.JButton btn_kunde;
-    private javax.swing.JButton btn_kundenAuftrag;
-    private javax.swing.JButton btn_lieferant;
-    private javax.swing.JButton btn_mitarbeiter;
-    private javax.swing.JButton btn_neuerKunde;
-    private javax.swing.JButton btn_offeneKonten;
-    private javax.swing.JButton btn_suchen;
+    private JButton btn_artikel;
+    private JButton btn_bestellungen;
+    private JButton btn_kunde;
+    private JButton btn_kundenAuftrag;
+    private JButton btn_lieferant;
+    private JButton btn_mitarbeiter;
+    private JButton btn_neuerKunde;
+    private JButton btn_offeneKonten;
+    private JButton btn_suchen;
     private javax.swing.JTextField field_kundenSuchen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable jTable1;
+    private JTable table_kunde;
     // End of variables declaration//GEN-END:variables
     private final neuerKunde neuerKundeFrame = new neuerKunde();
     private final offeneKonten offeneKontenFrame = new offeneKonten();
+
+    private Statement statement = null;
+    private ResultSet resultSet = null;
+    
+
+
 
 }
