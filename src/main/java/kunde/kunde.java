@@ -8,15 +8,14 @@ package kunde;
 import de.creativaweb.artikel.*;
 import de.creativaweb.database.OwnDerby;
 import DbTest.*;
+import controller.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javax.swing.JFrame;
-import javax.swing.JTable;
-import javax.swing.JButton;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -247,27 +246,8 @@ public class kunde extends javax.swing.JFrame {
     }
 
     private void btn_suchenKundeMouseClicked(java.awt.event.MouseEvent evt) {
-
-        DefaultTableModel model = (DefaultTableModel) table_kunde.getModel();
-        dbConnection dbConnection = new dbConnection();
-        dbConnection.init();
-
-        String str = field_kundenSuchen.getText();
-        String query = "SELECT KUNDENNR, NAME, ADR from APP.KUNDEN WHERE NAME LIKE '"+ "%" +str+ "%" +"' " +
-                                                                 "OR KUNDENNR LIKE '"+ "%" +str+ "%" +"' " ;
-
-        try {
-
-            statement = dbConnection.getMyConnection().createStatement();
-            resultSet = statement.executeQuery(query);
-            while ( resultSet.next()) {
-                model.addRow(new Object[] {resultSet.getString(1),resultSet.getString(2),resultSet.getString(3), });
-
-            }
-        } catch(Exception e) { System.out.println("Fehler #1 in getArtikel(): " + e.getMessage()); e.printStackTrace(); };
-
-        dbConnection.destroy();
-
+        String suchBegriff = field_kundenSuchen.getText();
+        table_kunde.setModel(kundeController.kundenSuchen(suchBegriff));
     }
 
 
@@ -329,10 +309,19 @@ public class kunde extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private final neuerKunde neuerKundeFrame = new neuerKunde();
     private final offeneKonten offeneKontenFrame = new offeneKonten();
+    private dbConnection dbConnection = new dbConnection();
+    private kundeController kundeController = new kundeController();
 
-    private Statement statement = null;
-    private ResultSet resultSet = null;
-    
+    //    Getters
+    public JTable getTable_kunde() {
+        return table_kunde;
+    }
+
+    public DbTest.dbConnection getDbConnection() {
+        return dbConnection;
+    }
+
+
 
 
 
