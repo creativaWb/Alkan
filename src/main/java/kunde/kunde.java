@@ -236,10 +236,9 @@ public class kunde extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_lieferantActionPerformed
 
-    private void btn_offeneKontenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_offeneKontenMouseClicked
-        // TODO add your handling code here:
-        offeneKontenFrame.setVisible(true);
-    }//GEN-LAST:event_btn_offeneKontenMouseClicked
+    private void btn_offeneKontenMouseClicked(java.awt.event.MouseEvent evt) {
+        offeneKonten.main(new String[0]);
+    }
 
     private void btn_neuerKundeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_neuerKundeMouseClicked
         neuerKundeFrame.setVisible(true);
@@ -308,7 +307,7 @@ public class kunde extends javax.swing.JFrame {
     private JTable table_kunde;
     // End of variables declaration//GEN-END:variables
     private final neuerKunde neuerKundeFrame = new neuerKunde();
-    private final offeneKonten offeneKontenFrame = new offeneKonten();
+//    private final offeneKonten offeneKontenFrame = new offeneKonten();
     private dbConnection dbConnection = new dbConnection();
     private kundeController kundeController = new kundeController();
 

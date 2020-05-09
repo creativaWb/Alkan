@@ -10,7 +10,7 @@ import kunde.*;
 
 public class kundeController {
 
-    public DefaultTableModel kundenSuchen(String str){
+    public static DefaultTableModel kundenSuchen(String str){
         kunde kunde = new kunde();
         DefaultTableModel defaultTableModel = (DefaultTableModel) kunde.getTable_kunde().getModel();
         kunde.getDbConnection().init();
@@ -34,6 +34,36 @@ public class kundeController {
         } catch(Exception e) { System.out.println("Fehler #1 in kundenSuchen: " + e.getMessage()); e.printStackTrace(); }
 
         kunde.getDbConnection().destroy();
+        return defaultTableModel;
+    }
+
+
+    public static DefaultTableModel offeneKontenAnzeigen(){
+        offeneKonten offeneKonten = new offeneKonten();
+        // str ist nur für Test, später wird auf passende SELECT statement ersetzt
+        String str = "Mari";
+        DefaultTableModel defaultTableModel = (DefaultTableModel) offeneKonten.getTable_offeneKonten().getModel();
+        offeneKonten.getDbConnection().init();
+
+        //mann kann entweder auf Name oder KundenNr suchen
+        String query = "SELECT KUNDENNR, NAME, ADR from APP.KUNDEN WHERE NAME LIKE '"+ "%" +str+ "%" +"' " +
+                "OR KUNDENNR LIKE '"+ "%" +str+ "%" +"' " ;
+
+
+        try {
+            if (defaultTableModel.getRowCount() != 0){
+                System.out.println("The Table is not empty"); //Uberprufung ob die Tablle alte Daten beibehaltet
+                defaultTableModel.setRowCount(0); //delete alte Ergebnisse fur neue Ergebnisse
+            }
+            Statement statement = offeneKonten.getDbConnection().getMyConnection().createStatement();
+            ResultSet resultSet = statement.executeQuery(query);
+            while ( resultSet.next()) {
+                defaultTableModel.addRow(new Object[] {resultSet.getString(1), resultSet.getString(2), resultSet.getString(3), });
+
+            }
+        } catch(Exception e) { System.out.println("Fehler #1 in offeneKonten(): " + e.getMessage()); e.printStackTrace(); }
+
+        offeneKonten.getDbConnection().destroy();
         return defaultTableModel;
     }
 
