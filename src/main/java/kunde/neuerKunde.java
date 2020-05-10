@@ -6,6 +6,9 @@
 package kunde;
 
 import de.creativaweb.artikel.*;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import controller.kundeController;
 
 /**
  *
@@ -50,47 +53,47 @@ public class neuerKunde extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        field_PLZ = new javax.swing.JTextField();
-        field_ort = new javax.swing.JTextField();
+        field_PLZ = new JTextField();
+        field_ort = new JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        field_email = new javax.swing.JTextField();
-        field_telefon = new javax.swing.JTextField();
-        field_handy = new javax.swing.JTextField();
-        field_fax = new javax.swing.JTextField();
-        field_steuerNummer = new javax.swing.JTextField();
-        field_eoid = new javax.swing.JTextField();
-        field_ustid = new javax.swing.JTextField();
-        field_fid = new javax.swing.JTextField();
-        field_bank = new javax.swing.JTextField();
-        field_plzLieferant = new javax.swing.JTextField();
-        field_Strasse = new javax.swing.JTextField();
-        field_Nachname = new javax.swing.JTextField();
+        field_email = new JTextField();
+        field_telefon = new JTextField();
+        field_handy = new JTextField();
+        field_fax = new JTextField();
+        field_steuerNummer = new JTextField();
+        field_eoid = new JTextField();
+        field_ustid = new JTextField();
+        field_fid = new JTextField();
+        field_bank = new JTextField();
+        field_plzLieferant = new JTextField();
+        field_Strasse = new JTextField();
+        field_Nachname = new JTextField();
         jLabel25 = new javax.swing.JLabel();
-        field_land = new javax.swing.JTextField();
-        field_strasseLieferant = new javax.swing.JTextField();
-        field_kontoNr = new javax.swing.JTextField();
+        field_land = new JTextField();
+        field_strasseLieferant = new JTextField();
+        field_kontoNr = new JTextField();
         jLabel26 = new javax.swing.JLabel();
-        field_blz = new javax.swing.JTextField();
-        field_iban = new javax.swing.JTextField();
+        field_blz = new JTextField();
+        field_iban = new JTextField();
         jLabel27 = new javax.swing.JLabel();
-        bic = new javax.swing.JTextField();
+        bic = new JTextField();
         jLabel28 = new javax.swing.JLabel();
         btn_bankHinzufuegen = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
-        field_ortLieferant = new javax.swing.JTextField();
+        field_ortLieferant = new JTextField();
         jLabel30 = new javax.swing.JLabel();
-        field_landLieferant = new javax.swing.JTextField();
+        field_landLieferant = new JTextField();
         jLabel31 = new javax.swing.JLabel();
-        field_fahrer = new javax.swing.JTextField();
+        field_fahrer = new JTextField();
         jLabel32 = new javax.swing.JLabel();
-        field_tFahrer = new javax.swing.JTextField();
+        field_tFahrer = new JTextField();
         jLabel33 = new javax.swing.JLabel();
-        field_preisgruppe = new javax.swing.JTextField();
+        field_preisgruppe = new JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(242, 242, 242));
@@ -498,8 +501,25 @@ public class neuerKunde extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_lieferantActionPerformed
 
     private void btn_bankHinzufuegenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_bankHinzufuegenMouseClicked
-        
-    }//GEN-LAST:event_btn_bankHinzufuegenMouseClicked
+//        String bankName = field_bank.getText();
+//        String blz = field_blz.getText();
+//        String kontoNr = field_kontoNr.getText();
+//        String iban = field_iban.getText();
+//        String bic_str = bic.getText();
+        String[] bankArray = new String[5];
+//        bankArray[0] = bankName;
+//        bankArray[1] = blz;
+//        bankArray[2] = kontoNr;
+//        bankArray[3] = iban;
+//        bankArray[4] = bic_str;
+        bankArray[0] = field_bank.getText();;
+        bankArray[1] = field_blz.getText();
+        bankArray[2] = field_kontoNr.getText();
+        bankArray[3] = field_iban.getText();
+        bankArray[4] = bic.getText();
+        kundeController kundeController = new kundeController();
+        kundeController.bankEinfuegen(bankArray);
+    }
 
     /**
      * @param args the command line arguments
@@ -600,38 +620,38 @@ public class neuerKunde extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField bic;
-    private javax.swing.JButton btn_artikel;
-    private javax.swing.JButton btn_bankHinzufuegen;
-    private javax.swing.JButton btn_bestellungen;
-    private javax.swing.JButton btn_kunde;
-    private javax.swing.JButton btn_kundenAuftrag;
-    private javax.swing.JButton btn_lieferant;
-    private javax.swing.JButton btn_mitarbeiter;
-    private javax.swing.JTextField field_Nachname;
-    private javax.swing.JTextField field_PLZ;
-    private javax.swing.JTextField field_Strasse;
-    private javax.swing.JTextField field_bank;
-    private javax.swing.JTextField field_blz;
-    private javax.swing.JTextField field_email;
-    private javax.swing.JTextField field_eoid;
-    private javax.swing.JTextField field_fahrer;
-    private javax.swing.JTextField field_fax;
-    private javax.swing.JTextField field_fid;
-    private javax.swing.JTextField field_handy;
-    private javax.swing.JTextField field_iban;
-    private javax.swing.JTextField field_kontoNr;
-    private javax.swing.JTextField field_land;
-    private javax.swing.JTextField field_landLieferant;
-    private javax.swing.JTextField field_ort;
-    private javax.swing.JTextField field_ortLieferant;
-    private javax.swing.JTextField field_plzLieferant;
-    private javax.swing.JTextField field_preisgruppe;
-    private javax.swing.JTextField field_steuerNummer;
-    private javax.swing.JTextField field_strasseLieferant;
-    private javax.swing.JTextField field_tFahrer;
-    private javax.swing.JTextField field_telefon;
-    private javax.swing.JTextField field_ustid;
+    private JTextField bic;
+    private JButton btn_artikel;
+    private JButton btn_bankHinzufuegen;
+    private JButton btn_bestellungen;
+    private JButton btn_kunde;
+    private JButton btn_kundenAuftrag;
+    private JButton btn_lieferant;
+    private JButton btn_mitarbeiter;
+    private JTextField field_Nachname;
+    private JTextField field_PLZ;
+    private JTextField field_Strasse;
+    private JTextField field_bank;
+    private JTextField field_blz;
+    private JTextField field_email;
+    private JTextField field_eoid;
+    private JTextField field_fahrer;
+    private JTextField field_fax;
+    private JTextField field_fid;
+    private JTextField field_handy;
+    private JTextField field_iban;
+    private JTextField field_kontoNr;
+    private JTextField field_land;
+    private JTextField field_landLieferant;
+    private JTextField field_ort;
+    private JTextField field_ortLieferant;
+    private JTextField field_plzLieferant;
+    private JTextField field_preisgruppe;
+    private JTextField field_steuerNummer;
+    private JTextField field_strasseLieferant;
+    private JTextField field_tFahrer;
+    private JTextField field_telefon;
+    private JTextField field_ustid;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;

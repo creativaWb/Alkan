@@ -22,7 +22,7 @@ public class dbConnection {
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             myConnection = DriverManager.getConnection(dbURL, user, passwort);
             if (myConnection != null) {
-                System.out.println("Connected to database #2");
+                System.out.println("Connected to database Alkan APP");
             }
         }
         catch (Exception e){

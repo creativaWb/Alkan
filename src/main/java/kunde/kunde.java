@@ -308,19 +308,12 @@ public class kunde extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private final neuerKunde neuerKundeFrame = new neuerKunde();
 //    private final offeneKonten offeneKontenFrame = new offeneKonten();
-    private dbConnection dbConnection = new dbConnection();
     private kundeController kundeController = new kundeController();
 
     //    Getters
     public JTable getTable_kunde() {
         return table_kunde;
     }
-
-    public DbTest.dbConnection getDbConnection() {
-        return dbConnection;
-    }
-
-
 
 
 
