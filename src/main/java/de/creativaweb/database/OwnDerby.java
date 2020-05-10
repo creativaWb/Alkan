@@ -18,6 +18,7 @@ import java.util.Arrays;
 import java.util.Date;
 import java.util.Properties;
 
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
@@ -31,7 +32,7 @@ import java.sql.ResultSetMetaData;
 
 //import basics.*;
 //import starts.Alkan_Basic;
-
+//stmt.executeUpdate("CREATE TABLE product4(id  INTEGER NOT NULL  PRIMARY KEY GENERATED ALWAYS AS IDENTITY (start with 1,increment by 1) ,mitarbeiter VARCHAR(30) NOT NULL,linie varchar(10) NOT NULL,auschuss VARCHAR(30) NOT NULL,zeit varchar(30) NOT NULL,datum varchar(30)NOT NULL)");
 public class OwnDerby implements Runnable{
 	//private Basics				basics			= new Basics();
 	private Thread				trd				= null;
@@ -47,6 +48,7 @@ public class OwnDerby implements Runnable{
     private JTable				artTbl			= null;
     public DefaultTableModel	tblModel1		= null;
     private String[]			artTblHead2		= { "LIEFERANTNR","LIEFERANTNAME"};
+    JComboBox combo = new JComboBox();
 	private static String[]			serverliste		= { 
 		// 0
 		"jdbc:derby://localhost:1527/alkan;create=true;",
@@ -82,6 +84,7 @@ public class OwnDerby implements Runnable{
 		checkNewTables();		
 	}
 	*/
+    //
 	public void setMessageLabel() {
 	}
 	// datenbank verbindung 
@@ -101,6 +104,12 @@ public class OwnDerby implements Runnable{
 			e.printStackTrace();
 			dbStarted	= false;
 		}
+	}
+	public void createTable2() throws SQLException
+	{
+		openCon();
+		stmt	= con.createStatement();
+		stmt.executeUpdate("CREATE TABLE HAUPTGRUPPE2(ID INTEGER NOT NULL  PRIMARY KEY GENERATED ALWAYS AS IDENTITY (start with 1,increment by 1) ,HGRUPPE VARCHAR(50) NOT NULL,UGRUPPE varchar(50) )");
 	}
 	//test
 	private void startDataBaseViaDosCommand() {
@@ -1146,4 +1155,55 @@ query = ("SELECT LIEFERANTNR,LIEFERANTNAME,KNNR,ADR,PLZ,ORT,LAND,TEL1,TEL2,FAX,E
 			return artTbl;
 		}
 	
+			//Hauptgruppe2 ***********************************************
+			public void	hauptgruppe2(String hgruppe) throws SQLException
+			{
+			 this.openCon();
+			stmt = con.createStatement();
+			  stmt.executeUpdate( "insert into HAUPTGRUPPE2 (HGRUPPE) values('"+hgruppe+"')");
+			  //con.close();
+			  //stmt.close();
+			}
+			
+			// ***************************************************************************
+			public String [] hgruppecombo() throws SQLException
+			
+			{ 
+				String[] hgruppe = new String[20];
+				int i=0;
+		query = ("SELECT HGRUPPE from HAUPTGRUPPE2");		
+				
+						
+				try {
+					 openCon();
+					stmt	= con.createStatement();
+					rset	= stmt.executeQuery(query);
+
+					while (rset.next()) {
+						
+						//System.out.println("System out Print****"+ rset.getString("HGRUPPE"));
+						
+						//combo.addItem(rset.getString("HGRUPPE"));
+						hgruppe[i] = rset.getString("HGRUPPE");
+						
+						//System.out.println("System out Print****"+ hgruppe[i]);
+						
+					i++;
+					}
+					stmt.close();
+					rset.close();
+				} catch(Exception e) {
+		            //System.out.println("Fehler in OwnDerby.getLieferantenForMaskeArtikel(): " + e.getMessage());
+		            e.printStackTrace();
+				}	
+				
+				return hgruppe;
+			}
+			// *******************************************************************************************************
+			//**************************************************************
+			 public static void main(String args[]) throws SQLException {
+				 OwnDerby onderby = new OwnDerby();
+						 //onderby.createTable2();
+				 onderby.hgruppecombo();
+			 }
 }
