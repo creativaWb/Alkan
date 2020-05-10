@@ -14,14 +14,14 @@ import de.creativaweb.database.OwnDerby;
  * @author Nail
  */
 public class gruppe extends javax.swing.JFrame {
-
+//
     /**
      * Creates new form startSeite
      */
     public gruppe() {
         initComponents();
     }
-
+//das ist nur ein Test
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
