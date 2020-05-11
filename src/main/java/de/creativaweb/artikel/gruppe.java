@@ -3,19 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+//test
 package de.creativaweb.artikel;
 import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
 import de.creativaweb.database.OwnDerby;
-import javafx.scene.control.ComboBox;
+//import javafx.scene.control.ComboBox;
 /**
  *
  * @author Nail
  */
 public class gruppe extends javax.swing.JFrame {
-//
+//test2
     /**
      * Creates new form startSeite
      */
@@ -184,7 +185,7 @@ public class gruppe extends javax.swing.JFrame {
                 	try { 
                 		String selected_item = jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
                 		 System.out.println("Selected_item: "+selected_item);
-                		JOptionPane.showMessageDialog(null,"  "+selected_item+  " ist als Hauptgruppe in  der Datenbank eingefügt!");
+                		JOptionPane.showMessageDialog(null,"  "+selected_item+  " ist als Hauptgruppe in  der Datenbank eingefï¿½gt!");
                 		 ownderby.openCon();
                 		
 						ownderby.untergruppe(jTextField2.getText(),selected_item);
