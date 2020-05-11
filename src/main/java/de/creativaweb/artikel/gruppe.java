@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
 import de.creativaweb.database.OwnDerby;
+import javafx.scene.control.ComboBox;
 /**
  *
  * @author Nail
@@ -169,8 +170,34 @@ public class gruppe extends javax.swing.JFrame {
         jLabel4.setText("Untergruppen Namen");
 
         jToggleButton2.setText("SENDEN");
+       // String selected_item = jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
+       
         jToggleButton2.setSize(new java.awt.Dimension(115, 20));
-
+        
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	
+            	
+               // jButton3ActionPerformed(evt);
+                if(evt.getActionCommand()==jToggleButton2.getText())
+                {
+                	try { 
+                		String selected_item = jComboBox1.getItemAt(jComboBox1.getSelectedIndex());
+                		 System.out.println("Selected_item: "+selected_item);
+                		JOptionPane.showMessageDialog(null,"  "+selected_item+  " ist als Hauptgruppe in  der Datenbank eingefügt!");
+                		 ownderby.openCon();
+                		
+						ownderby.untergruppe(jTextField2.getText(),selected_item);
+						
+						clear();
+						jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(ownderby.hgruppecombo()));
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+                }
+            }
+        });
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(

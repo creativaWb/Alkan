@@ -1199,11 +1199,23 @@ query = ("SELECT LIEFERANTNR,LIEFERANTNAME,KNNR,ADR,PLZ,ORT,LAND,TEL1,TEL2,FAX,E
 				
 				return hgruppe;
 			}
+			//insert Untergruppe
+			public void	untergruppe(String ugruppe, String hgruppe) throws SQLException
+			{
+			 this.openCon();
+			stmt = con.createStatement();
+			//stmt.executeQuery("select HGRUPPE from HAUPTGRUPPE2 where HGRUPPE='"+hgruppe+"'");
+			 // stmt.executeUpdate( "insert into HAUPTGRUPPE2 (UGRUPPE) values('"+ugruppe+"') where HGRUPPE= '"+hgruppe+"'");
+			
+			stmt.executeUpdate("UPDATE HAUPTGRUPPE2 SET ugruppe ='"+ugruppe+"' WHERE HGRUPPE='"+hgruppe+"'");
+			  con.close();
+			  stmt.close();
+			}
 			// *******************************************************************************************************
 			//**************************************************************
 			 public static void main(String args[]) throws SQLException {
 				 OwnDerby onderby = new OwnDerby();
 						 //onderby.createTable2();
-				 onderby.hgruppecombo();
+				// onderby.hgruppecombo();
 			 }
 }
