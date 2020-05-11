@@ -4,20 +4,25 @@
  * and open the template in the editor.
  */
 package de.creativaweb.artikel;
+import java.sql.SQLException;
 
+import javax.swing.JOptionPane;
+
+import de.creativaweb.database.OwnDerby;
 /**
  *
  * @author Nail
  */
 public class gruppe extends javax.swing.JFrame {
-
+//
     /**
      * Creates new form startSeite
      */
     public gruppe() {
         initComponents();
     }
-
+//das ist nur ein 
+    //test2
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,7 +31,8 @@ public class gruppe extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+    	OwnDerby ownderby = new OwnDerby();
+    	String[] hgruppe;
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
@@ -115,10 +121,50 @@ public class gruppe extends javax.swing.JFrame {
 
         jToggleButton1.setText("SENDEN");
         jToggleButton1.setSize(new java.awt.Dimension(115, 20));
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	
+            	
+               // jButton3ActionPerformed(evt);
+                if(evt.getActionCommand()==jToggleButton1.getText())
+                {
+                	try { 
+                		JOptionPane.showMessageDialog(null,"  "+jTextField1.getText()+  " ist als Hauptgruppe in  der Datenbank eingefügt!");
+                		 ownderby.openCon();
+						ownderby.hauptgruppe2(jTextField1.getText());
+						
+						clear();
+						jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(ownderby.hgruppecombo()));
+					} catch (SQLException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+                }
+            }
+        });
 
         jLabel3.setText("Hauptgruppe");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        try {
+			jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(ownderby.hgruppecombo()));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+       // jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+       /** try {
+        	hgruppe = new String[20];
+        	hgruppe = ownderby.hgruppecombo();
+        	for(int i =0; i<hgruppe.length; i++)
+        	{	System.out.println("System out Prin    "+ hgruppe[i]);
+        		
+        		jComboBox1.addItem(hgruppe[i]);
+        		}
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}**/
+       
+        
 
         jLabel4.setText("Untergruppen Namen");
 
@@ -267,4 +313,9 @@ public class gruppe extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     // End of variables declaration//GEN-END:variables
+    public void clear()
+    {
+    	jTextField1.setText("");
+    	jTextField2.setText("");
+    }
 }
