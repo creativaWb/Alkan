@@ -10,6 +10,8 @@ import javax.swing.JButton;
 import javax.swing.JTextField;
 import controller.kundeController;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author Nail
@@ -524,28 +526,22 @@ public class neuerKunde extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_lieferantActionPerformed
 
-    private void btn_erstellenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_erstellenMouseClicked
-        // TODO add your handling code here:
+    private void btn_erstellenMouseClicked(java.awt.event.MouseEvent evt) {
+        String[] kundeArray = new String[4];
+        kundeArray[0] = field_Nachname.getText();
+        kundeArray[1] = field_Strasse.getText();
+        kundeArray[2] = field_PLZ.getText();
+        kundeArray[3] = field_ort.getText();
+        kundeController.kundeErstellen(kundeArray);
     }//GEN-LAST:event_btn_erstellenMouseClicked
 
-    private void btn_bankHinzufuegenMouseClicked(java.awt.event.MouseEvent evt) {                                                 
-//        String bankName = field_bank.getText();
-//        String blz = field_blz.getText();
-//        String kontoNr = field_kontoNr.getText();
-//        String iban = field_iban.getText();
-//        String bic_str = bic.getText();
+    private void btn_bankHinzufuegenMouseClicked(java.awt.event.MouseEvent evt) {
         String[] bankArray = new String[5];
-//        bankArray[0] = bankName;
-//        bankArray[1] = blz;
-//        bankArray[2] = kontoNr;
-//        bankArray[3] = iban;
-//        bankArray[4] = bic_str;
         bankArray[0] = field_bank.getText();;
         bankArray[1] = field_blz.getText();
         bankArray[2] = field_kontoNr.getText();
         bankArray[3] = field_iban.getText();
         bankArray[4] = bic.getText();
-        kundeController kundeController = new kundeController();
         kundeController.bankEinfuegen(bankArray);
     }
 
@@ -712,4 +708,5 @@ public class neuerKunde extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+    kundeController kundeController = new kundeController();
 }

@@ -12,11 +12,34 @@
     </properties>
     <name>alkan</name>
 
+<!--    <repository>-->
+<!--        <id>central</id>-->
+<!--        <url>http://repo.maven.apache.org/maven2/</url>-->
+<!--    </repository>-->
+
     <dependencies>
+<!--Apache Derby Database-->
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derbyclient</artifactId>
             <version>10.10.1.1</version>
+            <scope>compile</scope>
+        </dependency>
+<!--Bind depencys for DataVonvertor in ClientData2 class-->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.2.5-b10</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
 
