@@ -9,6 +9,7 @@ package de.creativaweb.artikel;
  *
  * @author Nail
  */
+//
 public class angebot extends javax.swing.JFrame {
 
     /**
@@ -248,5 +249,6 @@ public class angebot extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
+
     // End of variables declaration//GEN-END:variables
 }
