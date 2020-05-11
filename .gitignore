@@ -2,3 +2,4 @@
 /alkan.iml
 /.idea/
 *.class
+/target/*

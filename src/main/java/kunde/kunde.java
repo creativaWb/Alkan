@@ -14,6 +14,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -163,7 +164,11 @@ public class kunde extends javax.swing.JFrame {
         btn_suchen.setText("suchen");
         btn_suchen.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_suchenKundeMouseClicked(evt);
+                try {
+                    btn_suchenKundeMouseClicked(evt);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
             }
         });
 
@@ -244,7 +249,7 @@ public class kunde extends javax.swing.JFrame {
         neuerKundeFrame.setVisible(true);
     }
 
-    private void btn_suchenKundeMouseClicked(java.awt.event.MouseEvent evt) {
+    private void btn_suchenKundeMouseClicked(java.awt.event.MouseEvent evt) throws SQLException {
         String suchBegriff = field_kundenSuchen.getText();
         table_kunde.setModel(kundeController.kundenSuchen(suchBegriff));
     }
