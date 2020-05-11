@@ -11,6 +11,7 @@ import de.creativaweb.artikel.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import javax.swing.JButton;
 /**
  *
  * @author Nail
@@ -32,19 +33,19 @@ public class bestellung extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btn_artikel = new javax.swing.JButton();
-        btn_kunde = new javax.swing.JButton();
-        btn_lieferant = new javax.swing.JButton();
-        btn_mitarbeiter = new javax.swing.JButton();
-        btn_bestellungen = new javax.swing.JButton();
-        btn_kundenAuftrag = new javax.swing.JButton();
+        btn_artikel = new JButton();
+        btn_kunde = new JButton();
+        btn_lieferant = new JButton();
+        btn_mitarbeiter = new JButton();
+        btn_bestellungen = new JButton();
+        btn_kundenAuftrag = new JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        btn_senden = new javax.swing.JButton();
+        btn_senden = new JButton();
         lable_lieferantenNr = new javax.swing.JLabel();
         field_lieferantenNr = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         table_bestellung = new javax.swing.JTable();
-        btn_suchen = new javax.swing.JButton();
+        btn_suchen = new JButton();
         lable_lieferantenName = new javax.swing.JLabel();
         field_lieferantenName = new javax.swing.JTextField();
         lable_nettowarenbetrag = new javax.swing.JLabel();

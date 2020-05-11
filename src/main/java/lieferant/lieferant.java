@@ -10,6 +10,7 @@ import de.creativaweb.artikel.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import de.creativaweb.database.OwnDerby;
 /**
  *
  * @author Nail
@@ -30,7 +31,7 @@ public class lieferant extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
+    	OwnDerby ownderby = new OwnDerby();
         btn_artikel = new javax.swing.JButton();
         btn_kunde = new javax.swing.JButton();
         btn_lieferant = new javax.swing.JButton();
@@ -78,6 +79,7 @@ public class lieferant extends javax.swing.JFrame {
         btn_lieferant.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_lieferantActionPerformed(evt);
+            	
             }
         });
 
@@ -165,9 +167,21 @@ public class lieferant extends javax.swing.JFrame {
         table_lieferant.setRowHeight(31);
         table_lieferant.setShowGrid(false);
         table_lieferant.setShowVerticalLines(true);
+        ownderby.openCon();
+        table_lieferant=ownderby.getLieferantenBestellung("1");
         jScrollPane1.setViewportView(table_lieferant);
-
+        
         btn_suchen.setText("suchen");
+        btn_suchen.addActionListener( new ActionListener()
+    	{
+
+			@Override
+    	    public void actionPerformed(ActionEvent e)
+    	    {
+				if(e.getActionCommand()== btn_suchen.getText())
+					System.out.println("Lieferant");
+    	    }
+    	    });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
