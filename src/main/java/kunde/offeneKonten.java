@@ -5,10 +5,16 @@
  */
 package kunde;
 
+import DbTest.dbConnection;
+import controller.kundeController;
 import de.creativaweb.artikel.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
+import controller.*;
+import javax.swing.JTable;
+
 /**
  *
  * @author Nail
@@ -107,21 +113,21 @@ public class offeneKonten extends javax.swing.JFrame {
 
         table_offeneKonten.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null},
+//                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
                 "KundenNr", "Firmen Namen", "Vorname", "Nachname", "Strasse", "PLZ", "Ort", "Land", ""
@@ -221,11 +227,12 @@ public class offeneKonten extends javax.swing.JFrame {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new offeneKonten().setVisible(true);
+                // update Tabelle bei jeder neuen Aufruf
+                tableUpdate();
             }
         });
     }
@@ -240,10 +247,26 @@ public class offeneKonten extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTable table_offeneKonten;
+    private static JTable table_offeneKonten;
     // End of variables declaration//GEN-END:variables
     private final neuerArtikel neuerArtikelFrame = new neuerArtikel();
     private final neuerPfand neuerPfandFrame = new neuerPfand();
     private final angebot angebotFrame = new angebot();
     private final gruppe gruppeFrame = new gruppe();
+    private static DefaultTableModel defaultTableModel = new DefaultTableModel();
+    private DbTest.dbConnection dbConnection = new dbConnection();
+
+    public JTable getTable_offeneKonten() {
+        return table_offeneKonten;
+    }
+
+    public DbTest.dbConnection getDbConnection() {
+        return dbConnection;
+    }
+    // update Tabelle bei jeder neuen Aufruf
+    public static void tableUpdate(){
+        table_offeneKonten.setModel(kundeController.offeneKontenAnzeigen());
+    }
+
+
 }

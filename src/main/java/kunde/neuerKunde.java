@@ -6,6 +6,11 @@
 package kunde;
 
 import de.creativaweb.artikel.*;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import controller.kundeController;
+
+import java.sql.SQLException;
 
 /**
  *
@@ -91,6 +96,7 @@ public class neuerKunde extends javax.swing.JFrame {
         field_tFahrer = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
         field_preisgruppe = new javax.swing.JTextField();
+        btn_erstellen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(242, 242, 242));
@@ -257,6 +263,20 @@ public class neuerKunde extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel33.setText("Preisgruppe");
 
+        btn_erstellen.setBackground(new java.awt.Color(170, 170, 170));
+        btn_erstellen.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btn_erstellen.setForeground(new java.awt.Color(255, 255, 255));
+        btn_erstellen.setText("ERSTELLEN");
+        btn_erstellen.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        btn_erstellen.setMaximumSize(new java.awt.Dimension(142, 41));
+        btn_erstellen.setOpaque(true);
+        btn_erstellen.setSize(new java.awt.Dimension(142, 41));
+        btn_erstellen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_erstellenMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -325,8 +345,7 @@ public class neuerKunde extends javax.swing.JFrame {
                             .addComponent(jLabel28)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(136, 136, 136)
-                                .addComponent(bic, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(btn_bankHinzufuegen, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(bic, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -345,7 +364,8 @@ public class neuerKunde extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel30)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(field_landLieferant, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(field_landLieferant, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btn_bankHinzufuegen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -361,7 +381,10 @@ public class neuerKunde extends javax.swing.JFrame {
                                     .addComponent(field_fahrer, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(field_tFahrer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(field_preisgruppe, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btn_erstellen, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)))
                 .addGap(15, 15, 15))
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
@@ -432,15 +455,19 @@ public class neuerKunde extends javax.swing.JFrame {
                     .addComponent(field_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28)
                     .addComponent(bic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(field_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_bankHinzufuegen, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(field_handy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(field_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(field_handy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_bankHinzufuegen, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -487,7 +514,9 @@ public class neuerKunde extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel24)
                                     .addComponent(field_plzLieferant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(94, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                        .addComponent(btn_erstellen, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -497,9 +526,24 @@ public class neuerKunde extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_lieferantActionPerformed
 
-    private void btn_bankHinzufuegenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_bankHinzufuegenMouseClicked
-        
-    }//GEN-LAST:event_btn_bankHinzufuegenMouseClicked
+    private void btn_erstellenMouseClicked(java.awt.event.MouseEvent evt) {
+        String[] kundeArray = new String[4];
+        kundeArray[0] = field_Nachname.getText();
+        kundeArray[1] = field_Strasse.getText();
+        kundeArray[2] = field_PLZ.getText();
+        kundeArray[3] = field_ort.getText();
+        kundeController.kundeErstellen(kundeArray);
+    }//GEN-LAST:event_btn_erstellenMouseClicked
+
+    private void btn_bankHinzufuegenMouseClicked(java.awt.event.MouseEvent evt) {
+        String[] bankArray = new String[5];
+        bankArray[0] = field_bank.getText();;
+        bankArray[1] = field_blz.getText();
+        bankArray[2] = field_kontoNr.getText();
+        bankArray[3] = field_iban.getText();
+        bankArray[4] = bic.getText();
+        kundeController.bankEinfuegen(bankArray);
+    }
 
     /**
      * @param args the command line arguments
@@ -604,6 +648,7 @@ public class neuerKunde extends javax.swing.JFrame {
     private javax.swing.JButton btn_artikel;
     private javax.swing.JButton btn_bankHinzufuegen;
     private javax.swing.JButton btn_bestellungen;
+    private javax.swing.JButton btn_erstellen;
     private javax.swing.JButton btn_kunde;
     private javax.swing.JButton btn_kundenAuftrag;
     private javax.swing.JButton btn_lieferant;
@@ -663,4 +708,5 @@ public class neuerKunde extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
+    kundeController kundeController = new kundeController();
 }

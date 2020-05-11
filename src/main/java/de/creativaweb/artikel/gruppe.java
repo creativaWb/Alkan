@@ -130,7 +130,7 @@ public class gruppe extends javax.swing.JFrame {
                 if(evt.getActionCommand()==jToggleButton1.getText())
                 {
                 	try { 
-                		JOptionPane.showMessageDialog(null,"  "+jTextField1.getText()+  " ist als Hauptgruppe in  der Datenbank eingefügt!");
+                		JOptionPane.showMessageDialog(null,"  "+jTextField1.getText()+  " ist als Hauptgruppe in  der Datenbank eingefÃ¼gt!");
                 		 ownderby.openCon();
 						ownderby.hauptgruppe2(jTextField1.getText());
 						

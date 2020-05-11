@@ -36,9 +36,9 @@ import javax.imageio.IIOImage;
 /*
 
 Kapselung der Daten der 'client'-Zeile, um unterschiedliche Datentypen
-in einem "Stück" zurückgeben zu können 
+in einem "St?ck" zur?ckgeben zu k?nnen 
 
-Derzeit:  ImageIcon für das Bild , Strings für den Rest
+Derzeit:  ImageIcon f?r das Bild , Strings f?r den Rest
 
 */
 
@@ -106,11 +106,11 @@ public class ClientData2
 
         while (h.length() > maxlen_string_image) 
         {
-            if (DebugAusgabe) System.out.println("Bild zu groß, verkleinerung um "+verkl+" Bildpunkte ("+h.length()+" Zeichen)");
+            if (DebugAusgabe) System.out.println("Bild zu gro?, verkleinerung um "+verkl+" Bildpunkte ("+h.length()+" Zeichen)");
             newimg = ic.getScaledInstance(breite-verkl, hoehe-verkl,  java.awt.Image.SCALE_SMOOTH);
             tempicon = new ImageIcon(newimg);
             h = encodeToString_jpeg(tempicon,0.85f);
-            if (DebugAusgabe) System.out.println("neue Größe: "+h.length()+" Zeichen");
+            if (DebugAusgabe) System.out.println("neue Gr??e: "+h.length()+" Zeichen");
             if (h.length() > maxlen_string_image*5) verkl = verkl+25;
             if (h.length() > maxlen_string_image*4) verkl = verkl+20;
             if (h.length() > maxlen_string_image*3) verkl = verkl+15;
@@ -422,8 +422,8 @@ public class ClientData2
         return null;
     }
 
-    // Auf jeden Fall einen String zurückgeben
-    // bei 'null' wird ein leerer String zurückgegeben
+    // Auf jeden Fall einen String zur?ckgeben
+    // bei 'null' wird ein leerer String zur?ckgegeben
     // _es  ->  Ergebnis String
     // bei einem leeren String als Parameter gibt es eine Exception
     public String get_index_es(String s )
@@ -438,7 +438,7 @@ public class ClientData2
         else return rg;
     }
 
-    // kürzerer Alias 
+    // k?rzerer Alias 
     public String get_i_s(String s )
     {
         return get_index_es(s);
@@ -469,8 +469,8 @@ public class ClientData2
     }
 
 
-    // Auf jeden Fall einen booleschen Wert zurückgeben
-    // bei 'null' wird false zurückgegeben
+    // Auf jeden Fall einen booleschen Wert zur?ckgeben
+    // bei 'null' wird false zur?ckgegeben
     // _eb  ->  Ergebnis Boolean
     // bei einem leeren String als Parameter gibt es eine Exception
     public boolean get_index_eb(String s )
@@ -488,7 +488,7 @@ public class ClientData2
         return rg.equals("x") || rg.equals("ja") || rg.equals("true");
     }
 
-    // kürzerer Alias 
+    // k?rzerer Alias 
     public boolean get_i_b(String s )
     {
         return get_index_eb(s);
@@ -515,7 +515,7 @@ public class ClientData2
         return rg.equals(vorgabe);
     }
 
-    // kürzerer Alias 
+    // k?rzerer Alias 
     public boolean get_i_b(String s, String vorgabe )
     {
         return get_index_eb(s,vorgabe);
@@ -848,7 +848,7 @@ public class ClientData2
 
 
 
-    /*  Kurzschreibweise für 'add_Spalte_string'  */
+    /*  Kurzschreibweise f?r 'add_Spalte_string'  */
     public boolean a_S_s(String Spaltenname, String wert )
     {
         return add_Spalte_string(Spaltenname,  wert);
