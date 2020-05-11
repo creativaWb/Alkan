@@ -165,7 +165,7 @@ public class gruppe extends javax.swing.JFrame {
 			e1.printStackTrace();
 		}**/
        
-        
+        //
 
         jLabel4.setText("Untergruppen Namen");
 
