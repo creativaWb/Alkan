@@ -1189,5 +1189,25 @@ public class OwnDerby implements Runnable{
 				//System.out.println("System out Print****"+ hgruppe[i]);
 
 				i++;
-			}
+			}stmt.close();
+			rset.close();
+		} catch(Exception e) {
+			//System.out.println("Fehler in OwnDerby.getLieferantenForMaskeArtikel(): " + e.getMessage());
+			e.printStackTrace();
+		}
 
+		return hgruppe;
+	}
+	
+	public void	untergruppe(String ugruppe, String hgruppe) throws SQLException
+	{
+	 this.openCon();
+	stmt = con.createStatement();
+	//stmt.executeQuery("select HGRUPPE from HAUPTGRUPPE2 where HGRUPPE='"+hgruppe+"'");
+	 // stmt.executeUpdate( "insert into HAUPTGRUPPE2 (UGRUPPE) values('"+ugruppe+"') where HGRUPPE= '"+hgruppe+"'");
+	
+	stmt.executeUpdate("UPDATE HAUPTGRUPPE2 SET ugruppe ='"+ugruppe+"' WHERE HGRUPPE='"+hgruppe+"'");
+	  con.close();
+	  stmt.close();
+		}
+}
