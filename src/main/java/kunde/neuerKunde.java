@@ -53,47 +53,48 @@ public class neuerKunde extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        field_PLZ = new JTextField();
-        field_ort = new JTextField();
+        field_PLZ = new javax.swing.JTextField();
+        field_ort = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        field_email = new JTextField();
-        field_telefon = new JTextField();
-        field_handy = new JTextField();
-        field_fax = new JTextField();
-        field_steuerNummer = new JTextField();
-        field_eoid = new JTextField();
-        field_ustid = new JTextField();
-        field_fid = new JTextField();
-        field_bank = new JTextField();
-        field_plzLieferant = new JTextField();
-        field_Strasse = new JTextField();
-        field_Nachname = new JTextField();
+        field_email = new javax.swing.JTextField();
+        field_telefon = new javax.swing.JTextField();
+        field_handy = new javax.swing.JTextField();
+        field_fax = new javax.swing.JTextField();
+        field_steuerNummer = new javax.swing.JTextField();
+        field_eoid = new javax.swing.JTextField();
+        field_ustid = new javax.swing.JTextField();
+        field_fid = new javax.swing.JTextField();
+        field_bank = new javax.swing.JTextField();
+        field_plzLieferant = new javax.swing.JTextField();
+        field_Strasse = new javax.swing.JTextField();
+        field_Nachname = new javax.swing.JTextField();
         jLabel25 = new javax.swing.JLabel();
-        field_land = new JTextField();
-        field_strasseLieferant = new JTextField();
-        field_kontoNr = new JTextField();
+        field_land = new javax.swing.JTextField();
+        field_strasseLieferant = new javax.swing.JTextField();
+        field_kontoNr = new javax.swing.JTextField();
         jLabel26 = new javax.swing.JLabel();
-        field_blz = new JTextField();
-        field_iban = new JTextField();
+        field_blz = new javax.swing.JTextField();
+        field_iban = new javax.swing.JTextField();
         jLabel27 = new javax.swing.JLabel();
-        bic = new JTextField();
+        bic = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
         btn_bankHinzufuegen = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
-        field_ortLieferant = new JTextField();
+        field_ortLieferant = new javax.swing.JTextField();
         jLabel30 = new javax.swing.JLabel();
-        field_landLieferant = new JTextField();
+        field_landLieferant = new javax.swing.JTextField();
         jLabel31 = new javax.swing.JLabel();
-        field_fahrer = new JTextField();
+        field_fahrer = new javax.swing.JTextField();
         jLabel32 = new javax.swing.JLabel();
-        field_tFahrer = new JTextField();
+        field_tFahrer = new javax.swing.JTextField();
         jLabel33 = new javax.swing.JLabel();
-        field_preisgruppe = new JTextField();
+        field_preisgruppe = new javax.swing.JTextField();
+        btn_erstellen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(242, 242, 242));
@@ -260,6 +261,20 @@ public class neuerKunde extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Lucida Grande", 0, 16)); // NOI18N
         jLabel33.setText("Preisgruppe");
 
+        btn_erstellen.setBackground(new java.awt.Color(170, 170, 170));
+        btn_erstellen.setFont(new java.awt.Font("Lucida Grande", 1, 13)); // NOI18N
+        btn_erstellen.setForeground(new java.awt.Color(255, 255, 255));
+        btn_erstellen.setText("ERSTELLEN");
+        btn_erstellen.setBorder(javax.swing.BorderFactory.createCompoundBorder());
+        btn_erstellen.setMaximumSize(new java.awt.Dimension(142, 41));
+        btn_erstellen.setOpaque(true);
+        btn_erstellen.setSize(new java.awt.Dimension(142, 41));
+        btn_erstellen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_erstellenMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -328,8 +343,7 @@ public class neuerKunde extends javax.swing.JFrame {
                             .addComponent(jLabel28)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(136, 136, 136)
-                                .addComponent(bic, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addComponent(btn_bankHinzufuegen, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(bic, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 378, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -348,7 +362,8 @@ public class neuerKunde extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addComponent(jLabel30)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(field_landLieferant, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(field_landLieferant, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(btn_bankHinzufuegen, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -364,7 +379,10 @@ public class neuerKunde extends javax.swing.JFrame {
                                     .addComponent(field_fahrer, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(field_tFahrer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(field_preisgruppe, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btn_erstellen, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(2, 2, 2)))
                 .addGap(15, 15, 15))
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
@@ -435,15 +453,19 @@ public class neuerKunde extends javax.swing.JFrame {
                     .addComponent(field_email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel28)
                     .addComponent(bic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(field_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_bankHinzufuegen, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(field_handy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel8)
+                            .addComponent(field_telefon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel9)
+                            .addComponent(field_handy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btn_bankHinzufuegen, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -490,7 +512,9 @@ public class neuerKunde extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel24)
                                     .addComponent(field_plzLieferant, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(94, Short.MAX_VALUE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                        .addComponent(btn_erstellen, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         pack();
@@ -500,7 +524,11 @@ public class neuerKunde extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_lieferantActionPerformed
 
-    private void btn_bankHinzufuegenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_bankHinzufuegenMouseClicked
+    private void btn_erstellenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_erstellenMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_erstellenMouseClicked
+
+    private void btn_bankHinzufuegenMouseClicked(java.awt.event.MouseEvent evt) {                                                 
 //        String bankName = field_bank.getText();
 //        String blz = field_blz.getText();
 //        String kontoNr = field_kontoNr.getText();
@@ -620,38 +648,39 @@ public class neuerKunde extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private JTextField bic;
-    private JButton btn_artikel;
-    private JButton btn_bankHinzufuegen;
-    private JButton btn_bestellungen;
-    private JButton btn_kunde;
-    private JButton btn_kundenAuftrag;
-    private JButton btn_lieferant;
-    private JButton btn_mitarbeiter;
-    private JTextField field_Nachname;
-    private JTextField field_PLZ;
-    private JTextField field_Strasse;
-    private JTextField field_bank;
-    private JTextField field_blz;
-    private JTextField field_email;
-    private JTextField field_eoid;
-    private JTextField field_fahrer;
-    private JTextField field_fax;
-    private JTextField field_fid;
-    private JTextField field_handy;
-    private JTextField field_iban;
-    private JTextField field_kontoNr;
-    private JTextField field_land;
-    private JTextField field_landLieferant;
-    private JTextField field_ort;
-    private JTextField field_ortLieferant;
-    private JTextField field_plzLieferant;
-    private JTextField field_preisgruppe;
-    private JTextField field_steuerNummer;
-    private JTextField field_strasseLieferant;
-    private JTextField field_tFahrer;
-    private JTextField field_telefon;
-    private JTextField field_ustid;
+    private javax.swing.JTextField bic;
+    private javax.swing.JButton btn_artikel;
+    private javax.swing.JButton btn_bankHinzufuegen;
+    private javax.swing.JButton btn_bestellungen;
+    private javax.swing.JButton btn_erstellen;
+    private javax.swing.JButton btn_kunde;
+    private javax.swing.JButton btn_kundenAuftrag;
+    private javax.swing.JButton btn_lieferant;
+    private javax.swing.JButton btn_mitarbeiter;
+    private javax.swing.JTextField field_Nachname;
+    private javax.swing.JTextField field_PLZ;
+    private javax.swing.JTextField field_Strasse;
+    private javax.swing.JTextField field_bank;
+    private javax.swing.JTextField field_blz;
+    private javax.swing.JTextField field_email;
+    private javax.swing.JTextField field_eoid;
+    private javax.swing.JTextField field_fahrer;
+    private javax.swing.JTextField field_fax;
+    private javax.swing.JTextField field_fid;
+    private javax.swing.JTextField field_handy;
+    private javax.swing.JTextField field_iban;
+    private javax.swing.JTextField field_kontoNr;
+    private javax.swing.JTextField field_land;
+    private javax.swing.JTextField field_landLieferant;
+    private javax.swing.JTextField field_ort;
+    private javax.swing.JTextField field_ortLieferant;
+    private javax.swing.JTextField field_plzLieferant;
+    private javax.swing.JTextField field_preisgruppe;
+    private javax.swing.JTextField field_steuerNummer;
+    private javax.swing.JTextField field_strasseLieferant;
+    private javax.swing.JTextField field_tFahrer;
+    private javax.swing.JTextField field_telefon;
+    private javax.swing.JTextField field_ustid;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
