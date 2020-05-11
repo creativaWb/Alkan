@@ -1,6 +1,6 @@
 
 package de.creativaweb.database;
-
+//
 import java.awt.List;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -1190,20 +1190,4 @@ public class OwnDerby implements Runnable{
 
 				i++;
 			}
-			stmt.close();
-			rset.close();
-		} catch(Exception e) {
-			//System.out.println("Fehler in OwnDerby.getLieferantenForMaskeArtikel(): " + e.getMessage());
-			e.printStackTrace();
-		}
 
-		return hgruppe;
-	}
-	// *******************************************************************************************************
-	//**************************************************************
-	public static void main(String args[]) throws SQLException {
-		OwnDerby onderby = new OwnDerby();
-		//onderby.createTable2();
-		onderby.hgruppecombo();
-	}
-}
